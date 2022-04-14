@@ -23,6 +23,7 @@ php artisan pm:import
 ## API
 
 GET: /api/people
+
 GET: /api/people/{person_id}
 
 ### Testing
