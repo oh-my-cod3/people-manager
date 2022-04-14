@@ -1,0 +1,55 @@
+{
+    "name": "oh-my-cod3/people-manager",
+    "description": "Un package di livello medio alto",
+    "keywords": [
+        "oh-my-cod3",
+        "people-manager"
+    ],
+    "homepage": "https://github.com/oh-my-cod3/people-manager",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Ohmycode",
+            "email": "ohmycode@nomail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^9.0",
+        "spatie/laravel-query-builder": "^5.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "OhMyCod3\\PeopleManager\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "OhMyCod3\\PeopleManager\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "OhMyCod3\\PeopleManager\\PeopleManagerServiceProvider"
+            ],
+            "aliases": {
+                "PeopleManager": "OhMyCod3\\PeopleManager\\PeopleManagerFacade"
+            }
+        }
+    }
+}
