@@ -77,7 +77,7 @@ class ImportPeopleFromApiCommand extends Command
          * Converto i dati in un singolo array da poter inserire direttamente nel database
          */
         $now = now();
-        $planets_to_inert = $planets->map(function($planet) use ($now){
+        $planets_to_inert = $planets->map(function($planet, $index) use ($now){
             return [
                 'name' => $planet['name'],
                 'rotation_period' => $planet['rotation_period'],
@@ -130,6 +130,8 @@ class ImportPeopleFromApiCommand extends Command
             // svuoto eventuali dati pregressi
             DB::table('planets')->delete();
             DB::table('people')->delete();
+
+
 
             Planet::insert($planets_to_inert);
             $this->info("Planets inserted: " . count($planets_to_inert) . " record");
